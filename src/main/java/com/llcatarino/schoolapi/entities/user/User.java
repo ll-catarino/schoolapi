@@ -1,5 +1,7 @@
 package com.llcatarino.schoolapi.entities.user;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -19,12 +21,14 @@ public class User {
             strategy = GenerationType.SEQUENCE,
             generator = "user_sequence"
     )
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Long id;
     private String firstName;
     private String lastName;
     private String email;
     private LocalDate dob;
     @Transient
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private Integer age;
 
     public User() {
