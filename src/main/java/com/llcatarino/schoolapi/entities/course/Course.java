@@ -84,6 +84,18 @@ public class Course {
         this.enrolledStudents = enrolledStudents;
     }
 
+    public void enrolStudent(Student student) {
+        enrolledStudents.add(student);
+    }
+
+    public void deleteStudent(Student student) {
+        if (!enrolledStudents.contains(student)) {
+            throw new IllegalStateException("student not in course");
+        }
+
+        enrolledStudents.remove(student);
+    }
+
     @Override
     public String toString() {
         return "Course{" +
