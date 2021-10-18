@@ -1,4 +1,4 @@
-package com.llcatarino.schoolapi.user;
+package com.llcatarino.schoolapi.entities.user;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -81,4 +81,15 @@ public class User {
         return Period.between(dob, LocalDate.now()).getYears();
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", dob=" + dob +
+                ", age=" + getAge() +
+                '}';
+    }
 }
