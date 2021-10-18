@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.ll-catarino</groupId>
 	<artifactId>schoolapi</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>schoolapi</name>
 	<description>school api project</description>
 	<properties>
@@ -45,6 +45,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>schoolAPI</finalName>
 	</build>
 
 </project>

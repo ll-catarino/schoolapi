@@ -1,0 +1,29 @@
+version: "3"
+services:
+  db:
+    container_name: db
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: schoolapi
+      POSTGRES_PASSWORD: password
+    networks:
+      - net
+
+  school-api:
+    container_name: school-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/schoolapi
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - net
+
+networks:
+  net:

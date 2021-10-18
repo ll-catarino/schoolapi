@@ -1,4 +1,4 @@
-package com.llcatarino.schoolapi.entities.user;
+package com.llcatarino.schoolapi;
 
 import com.llcatarino.schoolapi.entities.course.Course;
 import com.llcatarino.schoolapi.entities.course.CourseRepository;
@@ -52,7 +52,7 @@ public class Config {
             teacherRepository.saveAll(List.of(lennon, ringo));
 
             Course algebra = new Course(
-                    "algebra",
+                    "Drumming",
                     ringo,
                     Set.of(john, bob)
             );
